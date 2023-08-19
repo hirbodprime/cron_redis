@@ -1,0 +1,2 @@
+celery -A cron_redis worker --loglevel=info
+celery -A cron_redis beat --loglevel=info

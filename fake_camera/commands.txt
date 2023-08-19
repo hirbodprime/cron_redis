@@ -1,0 +1,2 @@
+celery -A fake_camera worker --loglevel=info
+celery -A fake_camera beat --loglevel=info

@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'module_data',
+    'module_data','django_cron',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -123,8 +124,15 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    # ]
+}
 CRON_CLASSES = [
-    "fake_camera.cron.MyCronJob",
+    "module_data.cron.MyCronJob"
     # ...
 ]
 # CRONJOBS = [ ('*/2 * * * *', 'module_data.cron.update_fake_data_cron')
